@@ -90,14 +90,12 @@ private struct LabelView: View {
                 Text(title)
                     .font(.system(size: 21.0, weight: .semibold))
                     .lineLimit(1)
-                    .fixedSize(horizontal: true, vertical: false)
                     .foregroundColor(.primary)
             }
             if let caption = caption {
                 Text(caption)
                     .font(.headline)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: true, vertical: false)
+					.fixedSize(horizontal: false, vertical: true)
                     .foregroundColor(.secondary)
             }
         }
@@ -222,4 +220,12 @@ public struct TTProgressHUD: View {
             return
         }
     }
+}
+
+#Preview {
+	ZStack {
+		Text("Hello World")
+		
+		TTProgressHUD(.constant(true), title: "Title", caption: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum", type: .error)
+	}
 }
